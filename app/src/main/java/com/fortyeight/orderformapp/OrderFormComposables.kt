@@ -128,7 +128,7 @@ fun OrderForm(
             onExpandedChange = { expandedMerchant = !expandedMerchant }
         ) {
             OutlinedTextField(
-                value = merchants.find { it.id == uiState.selectedMerchant }?.osName ?: "",
+                value = merchants.find { it.id.toInt() == uiState.selectedMerchant }?.name ?: "",
                 onValueChange = { },
                 readOnly = true,
                 label = { Text("OS Name *") },
@@ -143,7 +143,7 @@ fun OrderForm(
             ) {
                 merchants.forEach { merchant ->
                     DropdownMenuItem(
-                        text = { Text(merchant.osName) },
+                        text = { Text(merchant.name) },
                         onClick = {
                             viewModel.updateMerchant(merchant.id)
                             expandedMerchant = false

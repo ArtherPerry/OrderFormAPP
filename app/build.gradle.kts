@@ -45,7 +45,7 @@ dependencies {
     implementation("androidx.compose.ui:ui:1.5.4")
     implementation("androidx.compose.ui:ui-tooling-preview:1.5.4")
     implementation("androidx.compose.material3:material3:1.1.2")
-
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
     // Additional dependencies
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -56,6 +56,10 @@ dependencies {
 
     // For barcode generation
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+    
+    // For authentication and session management
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

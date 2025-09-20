@@ -28,10 +28,36 @@ data class Township(
 
 data class Merchant(
     @SerializedName("id") val id: Int,
-    @SerializedName("osName") val osName: String
+    @SerializedName("name") val name: String
 )
 
 data class ApiResponse(
     @SerializedName("success") val success: Boolean,
     @SerializedName("message") val message: String? = null
+)
+
+// Authentication Models
+data class LoginRequest(
+    @SerializedName("username") val username: String,
+    @SerializedName("password") val password: String
+)
+
+data class LoginResponse(
+    @SerializedName("success") val success: Boolean,
+    @SerializedName("message") val message: String? = null,
+    @SerializedName("token") val token: String? = null,
+    @SerializedName("user") val user: User? = null
+)
+
+data class User(
+    @SerializedName("id") val id: Long,
+    @SerializedName("username") val username: String,
+    @SerializedName("email") val email: String? = null,
+    @SerializedName("roles") val roles: List<String> = emptyList()
+)
+
+data class RegisterRequest(
+    @SerializedName("username") val username: String,
+    @SerializedName("password") val password: String,
+    @SerializedName("email") val email: String? = null
 )
